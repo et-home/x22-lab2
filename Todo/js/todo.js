@@ -34,13 +34,14 @@ let getTodos = async function () {
 
   let taskCard = "";
   for (let i = 0; i < todoData.length; i++) {
+    let checkedHTML = todoData[i].isComplete ? "checked" : "";
     taskCard += `<div class="card">
         <div class="card-body">
             <H5 class="card-title">${todoData[i].task}</H5>
                 <div class="row">
                     <div class="col">
                         <label>is finished</label>
-                        <input type="checkbox" id="${todoData[i].todoItemId}" onclick="taskComplete(${todoData[i].todoItemId})"/>
+                        <input type="checkbox" id="${todoData[i].todoItemId}" onclick="taskComplete(${todoData[i].todoItemId})" ${checkedHTML} />
                     </div>
                     <div class="col">
                         <button type="submit" id="task-delete" class="btn btn-danger" onclick="deleteTodo(${todoData[i].todoItemId})">Delete</button>
