@@ -5,7 +5,7 @@ public class TodoItem{
     public string? Task { get; set; }
     public string? Instruction { get; set; }
     public DateTime Deadline { get; set; } = DateTime.Today;
-    public Priority Priority{ get; set; }
+    public Priority Priority { get; set; } = Priority.Medium;
     public bool IsComplete { get; set; } = false;
 }
 
